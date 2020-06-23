@@ -6,18 +6,16 @@ import java.util.Objects;
  *
  * @author Varun Shrivastava (vslala)
  */
-class Product {
-    private Integer pid;
+
+ class Product {
+    private Integer id;
     private String name;
-    private Double price;
     private Integer stock;
     
-    public Product () {       
-    }
-    
-    public Product (Integer pid, String name, Double price, Integer stock) {
-        this.pid = pid;
+    //membuat variabel pada product
+    public Product (Integer pid, String name, Integer stock) {
+        this.pid = id;
         this.name = name;
-        this.price = price;
         this.stock = stock;
     }
+}
