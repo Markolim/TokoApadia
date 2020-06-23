@@ -3,6 +3,8 @@ import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 //fungsi untuk ttsng1
+
+
 public class ttsng1 extends HttpServlet
 {
   	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
@@ -25,7 +27,8 @@ public class ttsng1 extends HttpServlet
       pw.println("<br><font size=4><b>");
       pw.println("<pre>"+"TITLE\t\t\t\tTYPE    ARTISTS\t\t\t \t\t\tSONGS\t\t\t\t\t\tRATE"+"</pre></font></b>");
       //pw.println("<pre><select name=selectbk size=5>");
-      while(rs.next())
+    
+    while(rs.next())
       {
       String t=rs.getString(1);
       int len=t.length();
@@ -46,6 +49,7 @@ public class ttsng1 extends HttpServlet
       t=rs.getString(4);
       s=s.concat(t);
       len=len+t.length();
+      
       for(int i=len;i<60;i++)
         s=s.concat(".");
       t=rs.getString(5);
@@ -55,22 +59,22 @@ public class ttsng1 extends HttpServlet
       t=rs.getString(6);
       s=s.concat(t);
       len=len+t.length();
-      for(int i=len;i<60;i++)
-        s=s.concat(".");
-      t=rs.getString(7);
-      s=s.concat(t);
-      pw.println("<option>"+s+"</option><br>");
-      }
-      //pw.println("</pre></select></font>");
-      pw.println("NOTE: Type a = ALBUM, m = MOVIE");
-		pw.println("<pre>               Selected items</pre>");
-		pw.println("<pre><label>		Item name:        </label><input type=text name=txtinm></pre>");
-		pw.println("<pre><label>		Item Quantity:   </label><input type=text name=txtq></pre>");
-		pw.println("<pre><label>		Item type:        </label><input type=text name=txtr></pre>");
-		pw.println("<pre><label> 		Please enter H/h for Hardware  S/s for Software M/m for Music   B/b for Books</pre></label>");
-		pw.println("<font size=3><br><br><input type=submit value=Add_to_Cart></font></form>");
-	
-      }
+	      for(int i=len;i<60;i++)
+		s=s.concat(".");
+	      t=rs.getString(7);
+	      s=s.concat(t);
+	      pw.println("<option>"+s+"</option><br>");
+	      }
+	      //pw.println("</pre></select></font>");
+	      pw.println("NOTE: Type a = ALBUM, m = MOVIE");
+			pw.println("<pre>               Selected items</pre>");
+			pw.println("<pre><label>		Item name:        </label><input type=text name=txtinm></pre>");
+			pw.println("<pre><label>		Item Quantity:   </label><input type=text name=txtq></pre>");
+			pw.println("<pre><label>		Item type:        </label><input type=text name=txtr></pre>");
+			pw.println("<pre><label> 		Please enter H/h for Hardware  S/s for Software M/m for Music   B/b for Books</pre></label>");
+			pw.println("<font size=3><br><br><input type=submit value=Add_to_Cart></font></form>");
+
+	      }
 	catch(ClassNotFoundException e){}
 	catch(SQLException e){}
 	finally
@@ -80,4 +84,5 @@ public class ttsng1 extends HttpServlet
 		 con.close();
 		}catch(SQLException e){}}	
 }
+
 }
