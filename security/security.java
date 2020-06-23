@@ -6,7 +6,7 @@ import com.example.ppw.repository.ordersRepo;
 import com.example.ppw.repository.testNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+//import java library
 import java.util.List;
 import java.util.Optional;
 
@@ -40,3 +40,27 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/*/.html",
                         "/*/.css",
                         "/*/.js")
+                .permitAll()
+                .antMatchers("/cart/**")
+                .permitAll()
+                .antMatchers("/api/auth/**")
+                .permitAll()
+                .antMatchers("/user/**")
+                .permitAll()
+                .antMatchers("/api/user/checkUsernameAvailability", "/api/user/checkEmailAvailability")
+                .permitAll()
+                .antMatchers("/cart/purchase/*")
+                .permitAll()
+                .antMatchers("/product/simpan1")
+                .permitAll()
+                .antMatchers("/merchant/saveProduct")
+                .permitAll()
+                .antMatchers("seqUser/**")
+                .permitAll()
+                .antMatchers("/shoppingcart/produk")
+                .permitAll()
+                //.anyRequest()
+                //.authenticated()
+        ;
+    }
+}
