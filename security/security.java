@@ -59,3 +59,8 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("/shoppingcart/produk")
                 .permitAll()
+                //.anyRequest()
+                //.authenticated()
+        ;
+    }
+}
