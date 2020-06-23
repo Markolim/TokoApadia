@@ -7,13 +7,14 @@ import javax.servlet.http.*;
 
 public class ttsng1 extends HttpServlet
 {
+  
   public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
   {
     Connection con=null;
     Statement stmt=null;
     ResultSet rs=null;
-    res.setContentType("text/html");
-    PrintWriter pw=res.getWriter();
+  
+
     try
     {
       Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
@@ -35,60 +36,51 @@ public class ttsng1 extends HttpServlet
       len=40-len;
       String s="     ";s=s.concat(t);
       len=t.length();
+     
       for(int i=len;i<40;i++)
         s=s.concat(".");
-      t=rs.getString(2);
-      s=s.concat(t);
-      len=t.length();
+        t=rs.getString(2);
+        s=s.concat(t);
+        len=t.length();
+      
       for(int i=len;i<8;i++)
         s=s.concat(".");
-      t=rs.getString(3);
-      len=t.length();
-      s=s.concat(t);
-      s=s.concat(",");
-      t=rs.getString(4);
-      s=s.concat(t);
-      len=len+t.length();
+        t=rs.getString(3);
+        len=t.length();
+        s=s.concat(t);
+        s=s.concat(",");
+        t=rs.getString(4);
+        s=s.concat(t);
+        len=len+t.length();
       
       for(int i=len;i<60;i++)
         s=s.concat(".");
-      t=rs.getString(5);
-      len=t.length();
-      s=s.concat(t);
-      s=s.concat(",");
-      t=rs.getString(6);
-      s=s.concat(t);
-      len=len+t.length();
-	      for(int i=len;i<60;i++)
-		s=s.concat(".");
+        t=rs.getString(5);
+        len=t.length();
+        s=s.concat(t);
+        s=s.concat(",");
+        t=rs.getString(6);
+        s=s.concat(t);
+        len=len+t.length();
+      
+      for(int i=len;i<60;i++)
+		    s=s.concat(".");
 	      t=rs.getString(7);
 	      s=s.concat(t);
 	      pw.println("<option>"+s+"</option><br>");
-	      }
-	      //pw.println("</pre></select></font>");
-	      pw.println("NOTE: Type a = ALBUM, m = MOVIE");
+	    }
+        
+      //pw.println("</pre></select></font>");
+	    pw.println("NOTE: Type a = ALBUM, m = MOVIE");
 			pw.println("<pre> Selected items</pre>");
 			pw.println("<pre><label> Item name:</label><input type=text name=txtinm></pre>");
 			pw.println("<pre><label> Item Quantity:   </label><input type=text name=txtq></pre>");
 			pw.println("<pre><label> Item type:</label><input type=text name=txtr></pre>");
 			pw.println("<pre><label> Please enter H/h for Hardware  S/s for Software M/m for Music   B/b for Books</pre></label>");
 			pw.println("<font size=3><br><br><input type=submit value=Add_to_Cart></font></form>");
-	      }
-	catch(ClassNotFoundException e){}
-	catch(SQLException e){}
-	finally
-	{
-		try
-		{ if (con!=null)
-		 con.close();
-		}catch(SQLException e){}}	
-}
- public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
-  {
-    Connection con=null;
-    Statement stmt=null;
-    ResultSet rs=null;
-    res.setContentType("text/html");
-    PrintWriter pw=res.getWriter();
-   }
-}
+	  }
+  
+        catch(ClassNotFoundException e){}
+        catch(SQLException e){}
+      }
+    }
