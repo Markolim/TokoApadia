@@ -17,3 +17,17 @@ public class customer {
     }
     
 }
+ private void addProductToCart() {
+        int pid = getUserInput();
+        cart.addProductToCartByPID(pid);      
+    }
+
+    private void showCart() {
+        cart.printCartItems();
+    }
+
+    private void removeProductFromCart() {
+        int pid = getUserInput();
+        cart.removeProductByPID(pid);
+    }
+}
