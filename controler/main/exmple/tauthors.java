@@ -5,8 +5,8 @@ import javax.servlet.http.*;
 public class tauthors extends HttpServlet
 {
   public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
-	{
-  Connection con=null;
+ {
+	Connection con=null;
 	Statement stmt=null;
 	ResultSet rs=null;
 	res.setContentType("text/html");
@@ -52,14 +52,6 @@ public class tauthors extends HttpServlet
 		s=s.concat(t);
 		pw.println("<option>"+s+"</option><br>");
 		}
-		//pw.println("</pre></select></font>");
-		pw.println("<pre>               Selected items</pre>");
-		pw.println("<pre><label>		Item name:        </label><input type=text name=txtinm></pre>");
-		pw.println("<pre><label>		Item Quantity:   </label><input type=text name=txtq></pre>");
-		pw.println("<pre><label>		Item type:        </label><input type=text name=txtr></pre>");
-		pw.println("<pre><label> 		Please enter H/h for Hardware  S/s for Software M/m for Music   B/b for Books</pre></label>");
-		pw.println("<font size=3><br><br><input type=submit value=Add_to_Cart></font></form>");
-
 	}
 	catch(ClassNotFoundException e){}
 	catch(SQLException e){}
@@ -71,3 +63,8 @@ public class tauthors extends HttpServlet
 	}catch(SQLException e){}}
   }
 }
+
+
+//fungsi 
+//untuk 
+//tauthors
