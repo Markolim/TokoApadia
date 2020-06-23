@@ -12,6 +12,7 @@ import java.util.Objects;
 //menambah
 //requst
 import java.util.*;
+
 class request implements  Comparator{
    public int compare(Object a,Object b){
      String astr,bstr;
@@ -25,12 +26,7 @@ class request1{
   public static void main(String args[]){
    TreeSet ts=new TreeSet(new comparecl());
 
-   ts.add("c");
-   ts.add("b");
-   ts.add("f");
-   ts.add("d");
 
-   Iterator i=ts.iterator();
    while(i.hasNext()){
      Object obj=i.next();
      System.out.print(obj+" ");

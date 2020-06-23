@@ -95,5 +95,18 @@ public class switchcase4 {
         System.out.println("Total Bayar (Diskon 5%) : Rp "+ (total-((total*5)/100)));}
 //tambahan terbaru
     }
+
+//class untuk mencetak angka orderan
+class CetakAngka{ 
+    /*contoh membuat variabel dan scanner
+     contoh komentar*/
+        public static void main(String[] argumen){
+    
+            for(int i=0; i <= 10; i++){
+                System.out.print( i + " " );
+                
+            }
+       }
+    }
 }
 
