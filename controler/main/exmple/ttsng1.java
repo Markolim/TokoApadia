@@ -83,5 +83,12 @@ public class ttsng1 extends HttpServlet
 		 con.close();
 		}catch(SQLException e){}}	
 }
-
+ public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
+  {
+    Connection con=null;
+    Statement stmt=null;
+    ResultSet rs=null;
+    res.setContentType("text/html");
+    PrintWriter pw=res.getWriter();
+   }
 }
