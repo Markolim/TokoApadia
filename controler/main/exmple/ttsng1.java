@@ -62,6 +62,14 @@ public class ttsng1 extends HttpServlet
       pw.println("<option>"+s+"</option><br>");
       }
       //pw.println("</pre></select></font>");
-		
+      }
+	catch(ClassNotFoundException e){}
+	catch(SQLException e){}
+	finally
+	{
+		try
+		{ if (con!=null)
+		 con.close();
+		}catch(SQLException e){}}	
 }
 }
