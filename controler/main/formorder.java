@@ -4,13 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PpwApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PpwApplication.class, args);
-	}
 
-}
 public class JavaExample {
 
     public void calculate(int p, int t, double r, int n) {
