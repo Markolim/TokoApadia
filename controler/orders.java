@@ -4,6 +4,7 @@ public class ContohIfElse {
         int nilai = 10;
         String pesan="", jumlah="";
 
+        //membuat conditional param
         if (nilai>2) {
             jumlah = "Lebih besar dari 2";
             if(nilai%2 == 0){
