@@ -6,18 +6,35 @@ import java.util.Objects;
  *
  * @author Varun Shrivastava (vslala)
  */
-class Product {
-    private Integer pid;
-    private String name;
-    private Double price;
-    private Integer stock;
-    
-    public Product () {       
-    }
-    
-    public Product (Integer pid, String name, Double price, Integer stock) {
-        this.pid = pid;
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-    }
+
+//fungsi
+//untuk
+//menambah
+//requst
+import java.util.*;
+class request implements  Comparator{
+   public int compare(Object a,Object b){
+     String astr,bstr;
+     astr=(String) a;
+     bstr=(String) b;
+     return bstr.compareTo(astr);
+  }
+}
+
+class request1{
+  public static void main(String args[]){
+   TreeSet ts=new TreeSet(new comparecl());
+
+   ts.add("c");
+   ts.add("b");
+   ts.add("f");
+   ts.add("d");
+
+   Iterator i=ts.iterator();
+   while(i.hasNext()){
+     Object obj=i.next();
+     System.out.print(obj+" ");
+   }
+   System.out.println();
+ }
+}
