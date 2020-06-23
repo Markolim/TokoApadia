@@ -4,15 +4,17 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 public class tauthors extends HttpServlet
 {
-  public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
- {
+ 
+	public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
+	{
 	Connection con=null;
 	Statement stmt=null;
 	ResultSet rs=null;
-	res.setContentType("text/html");
-	PrintWriter pw=res.getWriter();
+	// res.setContentType("text/html");
+	// PrintWriter pw=res.getWriter();
 	try
 	{
+	
 		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 		con=DriverManager.getConnection("jdbc:odbc:sri","scott","tiger");
 		stmt=con.createStatement();
@@ -53,17 +55,10 @@ public class tauthors extends HttpServlet
 		pw.println("<option>"+s+"</option><br>");
 		}
 	}
-	catch(ClassNotFoundException e){}
-	catch(SQLException e){}
-	finally
-	{
-	try
-	{ if (con!=null)
-	 con.close();
-	}catch(SQLException e){}}
+	
+
   }
 }
-
 
 //fungsi 
 //untuk 
