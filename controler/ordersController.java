@@ -109,4 +109,15 @@ class CetakAngka{
        }
     }
 }
+ private void displayStoreProducts() {
+        List<Product> products = new Products().getProducts();
+        for (Product prod: products) {
+            System.out.println(
+                    prod.getPid() + "- " +
+                            prod.getName() + " " +
+                            prod.getPrice() + " " +
+                            prod.getStock()
+            );
+        }
+    }
 
